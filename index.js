@@ -17,7 +17,7 @@ const database = [];
 
 //Token config object
 const tokenConfig = {
-    secret: "my_random_secret_key",
+    secret: "d8515bdb-b077-433c-9969-f784c6764f97",
     expiresIn: "1h",
 };
 
