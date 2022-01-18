@@ -136,6 +136,11 @@ app.post('/login', validate(loginSchema), async (req, res) => {
     const { username, password } = req.userValidatedData;
 
     const user = await database.find((user) => user.username === username);
+
+    if (!user) {
+        return res.status(401).json({ message: 'Invalid Credentials' });
+    }
+
     const passwordMatch = await bcrypt.compare(password, user.password);
 
     if (!passwordMatch) {
